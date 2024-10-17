@@ -1,5 +1,5 @@
-src/media/*
-!src/media/images/profiles/default.jpg
+/src/media/*
+!/src/media/images/profiles/default.jpg
 
 .prettierrc
 staticfiles/
