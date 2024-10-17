@@ -1,0 +1,43 @@
+{% extends 'layouts/layout-main.html' %}
+
+<body>
+  <!-- block -->
+  {% block content %}
+  <!--  -->
+  {% load crispy_forms_tags %}
+
+  <!-- prettier-ignore -->
+  <form id="inputForm" action="">
+    <h1 class="heading">Register</h1>
+
+    <!-- {{forms|crispy}} -->
+      
+    <div class="form-floating">
+      {{ form.email }}
+      {{ form.email.label_tag }}
+    </div>
+    <br>
+    <div class="form-floating">
+      {{ form.username }}
+      {{ form.username.label_tag }}
+    </div>
+    <br>
+    <div class="form-floating">
+      {{ form.full_name }}
+      {{ form.full_name.label_tag }}
+    </div>
+    <br>
+    <div class="form-floating">
+      {{ form.password1 }}
+      {{ form.password1.label_tag }}
+    </div>
+    <br>
+    <div class="form-floating">
+      {{ form.password2 }}
+      {{ form.password2.label_tag }}
+    </div>
+    <br>
+    </form>
+  <!-- end prettier-ignore -->
+  {% endblock content %}
+</body>

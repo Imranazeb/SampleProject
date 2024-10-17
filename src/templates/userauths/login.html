@@ -1,0 +1,59 @@
+{% extends 'layouts/layout-main.html' %}
+
+<!-- prettier-ignore -->
+{% block title %}
+  Login
+{% endblock title %}
+
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/userauths.css' %}" />
+{% endblock css %}
+
+<!-- end prettier-ignore -->
+
+<body>
+  <!-- block -->
+  {% block content %}
+  <!--  -->
+
+  <!-- prettier-ignore -->
+  <div class="registerContainer"> 
+    <h1 class="heading">Login</h1>
+    {% if messages %}
+    {% for message in messages|slice:"1" %}
+    <div class="alert alert-warning" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+      
+    {% endif %}
+
+  <form id="inputForm" method="POST">
+    {% csrf_token %}
+    <div class="form-floating mb-3 mt-3">
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  required value="{{email}}">
+      <label for="email">Email</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required />
+      <label for="password">Please enter password</label>
+    </div>
+      <br>
+      <button type="submit" class="btn btn-secondary btn-large w-100 btn-block p-2">&nbsp; Login</button>
+    </div>
+  </form>
+  <br>
+  <p><a href="{% url 'userauths:register' %}">Need and account? Click here</a></p>
+  </div>
+  <!-- end prettier-ignore -->
+  {% endblock content %}
+</body>
+
+<!-- prettier-ignore -->
+{% block js %}
+{% load static %}
+<script src="{% static 'JS/userauths.js' %}"></script>
+{% endblock js %}
+<!-- end prettier-ignore -->

@@ -1,0 +1,72 @@
+{% extends 'layouts/layout-main.html' %}
+
+<!-- prettier-ignore -->
+{% block title %}
+  Register
+{% endblock title %}
+
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/userauths.css' %}" />
+{% endblock css %}
+
+<!-- end prettier-ignore -->
+
+<body>
+  <!-- block -->
+  {% block content %}
+  <!--  -->
+
+  <!-- prettier-ignore -->
+  <div class="registerContainer"> 
+    <h1 class="heading">Register</h1>
+    {% if messages %}
+    {% for message in messages|slice:"1" %}
+    <div class="alert alert-warning" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+      
+    {% endif %}
+
+  <form id="inputForm" method="POST">
+    {% csrf_token %}
+    <div class="form-floating mb-3 mt-3">
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  required value="{{email}}">
+      <label for="email">Email</label>
+    </div>
+    <!-- to appear next, add parent div mt-3 d-flex align-items-center, add span class="ms-2" -->
+    <!--  -->
+    <div class="form-floating mb-3 mt-3 d-flex align-items-center">
+      <input type="text" class="form-control" id="username" placeholder="Please choose username (no spaces and lowercase only)" name="username" required value="{{username}}">
+      <label for="username">username (no spaces and lowercase only)</label>
+      <i id="alertIcon" class=""></i>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" id="full_name" placeholder="Enter full_name" name="full_name" required value="{{full_name}}" />
+      <label for="full_name">Full name</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="password" class="form-control" id="password1" placeholder="Enter password" name="password1" required />
+      <label for="password1">Please enter password</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+      <input type="password" class="form-control" id="password2" placeholder="Confrim password" name="password2" required />
+      <label for="password2">Please confirm password</label>
+      <br>
+      <button id="submitButton" disabled type="submit" class="btn btn-secondary btn-large w-100 btn-block p-2">&nbsp; Register</button>
+    </div>
+  </form>
+  <p><a href="{% url 'userauths:login' %}">Already registered? Click here</a></p>
+  </div>
+  <!-- end prettier-ignore -->
+  {% endblock content %}
+</body>
+
+<!-- prettier-ignore -->
+{% block js %}
+{% load static %}
+<script src="{% static 'JS/userauths.js' %}"></script>
+{% endblock js %}
+<!-- end prettier-ignore -->

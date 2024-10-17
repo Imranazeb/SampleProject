@@ -1,0 +1,19 @@
+.container {
+  max-width: 500px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  font-size: 1rem;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}

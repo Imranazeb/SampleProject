@@ -1,0 +1,20 @@
+{% extends 'layouts/layout-main.html' %}
+
+<body>
+  <!-- block -->
+  {% block content %}
+  <!--  -->
+  {% load crispy_forms_tags %}
+
+  <!-- prettier-ignore -->
+  <form id="inputForm" action="">
+    <h1 class="heading">Register</h1>
+      {{form.email|as_crispy_field}}
+      {{form.username|as_crispy_field}}
+      {{form.full_name|as_crispy_field}}
+      {{form.password1|as_crispy_field}}
+      {{form.password2|as_crispy_field}}
+    </form>
+  <!-- end prettier-ignore -->
+  {% endblock content %}
+</body>

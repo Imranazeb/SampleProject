@@ -1,0 +1,63 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    volumes:
+      - .:/app:z
+      - static_volume:/app/staticfiles:z
+      - media_volume:/app/mediafiles:z
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    environment:
+      - DOCKER=True
+    env_file:
+      - ./.environment/.env.dev
+    depends_on:
+      - postgres
+
+    command: /start
+    networks:
+      - demo-project
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./docker/local/postgres/Dockerfile
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backup:/backups
+    env_file: ./.environment/.env.dev
+    networks:
+      - demo-project
+
+  nginx:
+    restart: always
+    depends_on:
+      django:
+        condition: service_healthy
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/mediafiles
+    build:
+      context: ./docker/local/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - demo-project
+
+networks:
+  demo-project:
+    driver: bridge
+
+volumes:
+  static_volume:
+  media_volume:
+  local_postgres_data: {}
+  local_postgres_data_backup: {}
