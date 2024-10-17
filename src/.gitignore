@@ -1,4 +1,4 @@
-/src/media/*
+/src/media/
 !/src/media/images/profiles/default.jpg
 
 .prettierrc
