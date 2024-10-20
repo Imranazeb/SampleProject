@@ -73,7 +73,7 @@ def register(request):
 
         else:   
             
-            # User.objects.create_user(username=username, email=email, full_name=full_name, password=password1)
+            User.objects.create_user(username=username, email=email, full_name=full_name, password=password1)
             return HttpResponse("Account created successfully")
 
     return render(request, 'userauths/register.html',)
