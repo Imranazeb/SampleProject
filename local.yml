@@ -20,6 +20,8 @@ services:
       - ./.environment/.env.dev
     depends_on:
       - postgres
+      - redis
+      - mailhog
     command: /start
     networks:
       - demo-project
@@ -60,6 +62,45 @@ services:
     networks:
       - demo-project
 
+  redis:
+    image: redis:7-alpine
+    networks:
+      - demo-project
+
+  celeryworker:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    command: /start-celeryworker
+    volumes:
+      - .:/app
+    env_file:
+      - ./.environment/.env.dev
+    depends_on:
+      - redis
+      - postgres
+      - mailhog
+    networks:
+      - demo-project
+
+  flower:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    command: /start-flower
+    volumes:
+      - flower_data:/data
+    env_file:
+      - ./.environment/.env.dev
+
+    depends_on:
+      - redis
+      - postgres
+    ports:
+      - "5555:5555"
+    networks:
+      - demo-project
+
 networks:
   demo-project:
     driver: bridge
@@ -69,3 +110,4 @@ volumes:
   media_volume:
   local_postgres_data: {}
   local_postgres_data_backup: {}
+  flower_data: {}

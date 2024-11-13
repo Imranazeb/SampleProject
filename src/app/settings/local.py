@@ -38,12 +38,25 @@ DATABASES = DOCKER_DATABASES if DOCKER else LOCAL_DATABASES
 
 
 # Mail-Hog Setup
-EMAIL_BACKEND = getenv(
-    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+if DOCKER:
+    getenv("EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
 )
-EMAIL_HOST = getenv("EMAIL_HOST", default="mailhog")
-EMAIL_PORT = int(getenv("EMAIL_PORT", default=1025))
+    EMAIL_HOST = getenv("EMAIL_HOST", default="mailhog")
+    EMAIL_PORT = int(getenv("EMAIL_PORT", default=1025))
+
+if not DOCKER:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = ""
 EMAIL_HOST_PASSWORD = ""
+
+#CELERY
+CELERY_BROKER_URL = getenv("CELERY_BROKER")
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_RESULT_BACKEND_MAX_RETRIES = 10
+CLEREY_TASK_SEND_SENT_EVENT = True 

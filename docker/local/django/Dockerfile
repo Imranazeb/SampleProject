@@ -73,6 +73,14 @@ COPY --chown=${USER}:${USER}  ./docker/local/django/start.sh /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
+COPY --chown=${USER}:${USER}  ./docker/local/django/celery/worker/start /start-celeryworker
+RUN sed -i 's/\r$//g' /start-celeryworker
+RUN chmod +x /start-celeryworker
+
+COPY --chown=${USER}:${USER}  ./docker/local/django/celery/flower/start /start-flower
+RUN sed -i 's/\r$//g' /start-flower
+RUN chmod +x /start-flower
+
 COPY --chown=${USER}:${USER} . ${APP_HOME}
 RUN chown ${USER}:${USER} ${APP_HOME}
 

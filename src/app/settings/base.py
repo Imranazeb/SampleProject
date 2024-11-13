@@ -20,7 +20,11 @@ CORE_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["crispy_forms", "crispy_bootstrap5"]
+THIRD_PARTY_APPS = [
+    "crispy_forms", 
+    "crispy_bootstrap5",
+    "djcelery_email",
+]
 
 MAIN_APPS = ["common.userauths", "common.core"]
 
