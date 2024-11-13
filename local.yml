@@ -20,7 +20,6 @@ services:
       - ./.environment/.env.dev
     depends_on:
       - postgres
-
     command: /start
     networks:
       - demo-project
@@ -49,6 +48,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    networks:
+      - demo-project
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    restart: always
+    container_name: mailhog
+    ports:
+      - "8025:8025"
     networks:
       - demo-project
 
