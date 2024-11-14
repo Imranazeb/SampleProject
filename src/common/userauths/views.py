@@ -141,7 +141,6 @@ def register_using_form(request):
         username = request.POST.get("username")
         full_name = request.POST.get("full_name")
         password1 = request.POST.get("password1")
-        password2 = request.POST.get("password2")
 
         if form.is_valid():
             user = form.save(commit=False)
