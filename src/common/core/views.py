@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpResponse
@@ -17,4 +19,5 @@ def send_test_email(request):
         ["to@example.com"],
         fail_silently=False,
     )
+    logging.info("Test email sent.")
     return HttpResponse("Test email sent.")
