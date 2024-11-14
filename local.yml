@@ -74,6 +74,8 @@ services:
     command: /start-celeryworker
     volumes:
       - .:/app
+    environment:
+      - DOCKER=True
     env_file:
       - ./.environment/.env.dev
     depends_on:
@@ -90,6 +92,8 @@ services:
     command: /start-flower
     volumes:
       - flower_data:/data
+    environment:
+      - DOCKER=True
     env_file:
       - ./.environment/.env.dev
 
