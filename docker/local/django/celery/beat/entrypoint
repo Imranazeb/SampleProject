@@ -1,0 +1,18 @@
+#!/bin/bash
+
+django_celery_migrations_complete() {
+    count=$(python manage.py showmigrations django_celery_beat | grep '\[ \]' | wc -l)
+    if [[ $count -eq 0 ]]; then
+        return 0
+    fi
+        return 1
+}
+
+until django_celery_migrations_complete; do
+    >&2 echo 'Waiting for Django Celery migrations to complete...'
+    sleep 1
+done
+
+>&2 echo 'Django Celery migrations have been applied'
+
+exec "$@"

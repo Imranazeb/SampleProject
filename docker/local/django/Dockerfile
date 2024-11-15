@@ -81,6 +81,14 @@ COPY --chown=${USER}:${USER}  ./docker/local/django/celery/flower/start /start-f
 RUN sed -i 's/\r$//g' /start-flower
 RUN chmod +x /start-flower
 
+COPY --chown=${USER}:${USER}  ./docker/local/django/celery/beat/start /start-celerybeat
+RUN sed -i 's/\r$//g' /start-celerybeat
+RUN chmod +x /start-celerybeat
+
+COPY --chown=${USER}:${USER}  ./docker/local/django/celery/beat/entrypoint /entrypoint-celerybeat
+RUN sed -i 's/\r$//g' /entrypoint-celerybeat
+RUN chmod +x /entrypoint-celerybeat
+
 COPY --chown=${USER}:${USER} . ${APP_HOME}
 RUN chown ${USER}:${USER} ${APP_HOME}
 
