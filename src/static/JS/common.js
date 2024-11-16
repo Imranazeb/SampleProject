@@ -1,8 +1,6 @@
 const csrftoken = getCookie("csrftoken");
 
 $(document).ready(function () {
-  console.log("ready");
-  console.log(csrftoken);
 });
 
 function getCookie(name) {

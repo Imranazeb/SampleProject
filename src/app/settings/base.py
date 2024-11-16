@@ -24,6 +24,7 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "djcelery_email",
+    "django_celery_beat",
 ]
 
 MAIN_APPS = ["common.userauths", "common.core"]
