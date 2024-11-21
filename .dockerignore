@@ -1,6 +1,16 @@
 #
 .flake8
 pyproject.toml
+Makefile
+local.yml
+docker-compose.yml
+LICENSE
+container.*
+.gitignore
+.environment/
+.flake8
+README.md
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
