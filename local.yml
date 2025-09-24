@@ -75,6 +75,9 @@ services:
     <<: *django
     entrypoint: /entrypoint-celerybeat
     command: /start-celerybeat
+    depends_on:
+      - redis
+      - django
 
   flower:
     <<: *django
