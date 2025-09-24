@@ -2,13 +2,15 @@
 
 ---
 
-## DEMO:
+### DEMO:
 
 ---
 
 This demo will demonstrate how users can create accounts and log into your service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can adminster the users. The login to admin is "admin@example.com" and password is "admin123".
 
 ### Prerequisites:
+
+---
 
 This project requires [git](https://git-scm.com/downloads) and [docker](https://www.docker.com/). Follow the instructions in the links provided to download and install. These first set of instructions are for Windows only. If you are using Linux, please skip to Linux section.
 
