@@ -6,7 +6,7 @@
 
 ---
 
-This demo will demonstrate how users can create accounts and log into your service. It will created containerized Django webservice, Postgress database, Mailhog mail testing platform, Celery task management service, Nginx reverse proxy sercice/load balancer, and Flower monitoring service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can adminster the users. The login to admin is "admin@example.com" and password is "admin123". To see if emails are being sent you can check mailhog service on localhost:8025. No real emails are sent, this is just a simulated enviornment.
+This demo will demonstrate how users can create accounts and log into your service. It will created containerized Django web service, Postgresql database, Mailhog mail testing platform, Celery task management service, Nginx reverse proxy service/load balancer, and Flower monitoring service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can administer the users. The login to admin is "admin@example.com" and password is "admin123". To see if emails are being sent you can check mailhog service on localhost:8025. No real emails are sent, this is just a simulated environment.
 
 ### Prerequisites:
 
@@ -20,7 +20,7 @@ This project requires [git](https://git-scm.com/downloads) and [docker](https://
 
 #### Windows:
 
-Firstly, isntall [docker desktop](https://www.docker.com/). Docker provides and isolated linux container on your machine to run services. It is advised that you enable [wsl2](https://learn.microsoft.com/en-us/windows/wsl/) on your windows machine. Alternatively, Linux can be installed on Windows by opening a terminal as an administrator and typing:
+Firstly, install [docker desktop](https://www.docker.com/). Docker provides and isolated linux container on your machine to run services. It is advised that you enable [wsl2](https://learn.microsoft.com/en-us/windows/wsl/) on your windows machine. Alternatively, Linux can be installed on Windows by opening a terminal as an administrator and typing:
 
     wsl --install
 
