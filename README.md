@@ -6,7 +6,7 @@
 
 ---
 
-This demo will demonstrate how users can create accounts and log into your service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can adminster the users. The login to admin is "admin@example.com" and password is "admin123".
+This demo will demonstrate how users can create accounts and log into your service. It will created containerized Django webservice, Postgress database, Mailhog mail testing platform, Celery task management service, Nginx reverse proxy sercice/load balancer, and Flower monitoring service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can adminster the users. The login to admin is "admin@example.com" and password is "admin123". To see if emails are being sent you can check mailhog service on localhost:8025. No real emails are sent, this is just a simulated enviornment.
 
 ### Prerequisites:
 
@@ -40,7 +40,7 @@ Then either double-click on **container.1DEPLOY.bat** or use the command line to
 
 Once built successfully, a web page will open up. The webpage can be accessed any time at [http://localhost:8080](http://localhost:8080).
 
-To create a superuser and access the admin interface, double-click on **container.2CREATESUPERUSER.bat**. This need to be done once only after creation of the container. Then, you may log in as admin using the URL [http://localhost:8080/admin](http://localhost:8080/admin).
+To create a superuser and access the admin interface, double-click on **container.2CREATESUPERUSER.bat**. As mentioned before, A superuser is created already with login admin and password pass123. Then, you may log in as admin using the URL [http://localhost:8080/admin](http://localhost:8080/admin).
 
 To stop the container, double-click **container.3STOP.bat**. To restart the container, use **container.4RESTART.bat**. To completely remove the container, dependencies, volumes, and temporary files, use **container.5CLEAN.bat**.
 
@@ -48,7 +48,7 @@ To stop the container, double-click **container.3STOP.bat**. To restart the cont
 
 #### Linux:
 
-Git is preinstalled on most Linux distros. If you are using Linux, basic knowledge of the command line interface (CLI) is assumed. 
+Git is preinstalled on most Linux distros. If you are using Linux, basic knowledge of the command line interface (CLI) is assumed.
 
 You will need to install Docker **and** Docker Compose. To install the full version, follow the instructions on [www.docker.com](https://www.docker.com/). **Alternatively**, you may install a lightweight version using the command:
 
