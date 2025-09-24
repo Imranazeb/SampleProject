@@ -7,11 +7,6 @@ until python manage.py showmigrations | grep '\[X\]'; do
     sleep 1
 done
 
-until django_celery_migrations_complete; do
-    >&2 echo 'Waiting for Django Celery migrations to complete...'
-    sleep 1
-done
-
 >&2 echo 'Django Celery migrations have been applied'
 
 exec "$@"
