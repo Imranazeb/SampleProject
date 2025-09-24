@@ -2,7 +2,15 @@
 
 ---
 
+### DEMO:
+
+---
+
+This demo will demonstrate how users can create accounts and log into your service. Once installed, go to your browser and enter: localhost:8080. You will be able to register and login. Enter localhost:8080/admin to see the admin panel where you can adminster the users. The login to admin is "admin@example.com" and password is "admin123".
+
 ### Prerequisites:
+
+---
 
 This project requires [git](https://git-scm.com/downloads) and [docker](https://www.docker.com/). Follow the instructions in the links provided to download and install. These first set of instructions are for Windows only. If you are using Linux, please skip to Linux section.
 
@@ -11,6 +19,14 @@ This project requires [git](https://git-scm.com/downloads) and [docker](https://
 ---
 
 #### Windows:
+
+Firstly, isntall [docker desktop](https://www.docker.com/). Docker provides and isolated linux container on your machine to run services. It is advised that you enable [wsl2](https://learn.microsoft.com/en-us/windows/wsl/) on your windows machine. Alternatively, Linux can be installed on Windows by opening a terminal as an administrator and typing:
+
+    wsl --install
+
+To allow execution of code you will need to open command prompt or terminal and run this command:
+
+    Set-ExecutionPolicy RemoteSigned
 
 Open a terminal in the folder where you want to place this project, then enter the command:
 
@@ -32,9 +48,7 @@ To stop the container, double-click **container.3STOP.bat**. To restart the cont
 
 #### Linux:
 
-Git is preinstalled on most Linux distros. If you are using Linux, basic knowledge of the command line interface (CLI) is assumed. Linux can be installed on Windows by opening a terminal as an administrator and typing:
-
-    wsl --install
+Git is preinstalled on most Linux distros. If you are using Linux, basic knowledge of the command line interface (CLI) is assumed. 
 
 You will need to install Docker **and** Docker Compose. To install the full version, follow the instructions on [www.docker.com](https://www.docker.com/). **Alternatively**, you may install a lightweight version using the command:
 
