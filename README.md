@@ -40,7 +40,7 @@ Then either double-click on **container.1DEPLOY.bat** or use the command line to
 
 Once built successfully, a web page will open up. The webpage can be accessed any time at [http://localhost:8080](http://localhost:8080).
 
-To create a superuser and access the admin interface, double-click on **container.2CREATESUPERUSER.bat**. As mentioned before, A superuser is created already with login admin and password pass123. Then, you may log in as admin using the URL [http://localhost:8080/admin](http://localhost:8080/admin).
+To create a superuser and access the admin interface, double-click on **container.2CREATESUPERUSER.bat**. As mentioned before, A superuser is created already with login admin and password pass123. You may log in as admin using the URL [http://localhost:8080/admin](http://localhost:8080/admin).
 
 To stop the container, double-click **container.3STOP.bat**. To restart the container, use **container.4RESTART.bat**. To completely remove the container, dependencies, volumes, and temporary files, use **container.5CLEAN.bat**.
 
