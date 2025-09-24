@@ -12,7 +12,7 @@ This demo will demonstrate how users can create accounts and log into your servi
 
 ---
 
-This project requires [git](https://git-scm.com/downloads) and [docker](https://www.docker.com/). Follow the instructions in the links provided to download and install. These first set of instructions are for Windows only. If you are using Linux, please skip to Linux section.
+This project requires [git](https://git-scm.com/downloads) and [docker](https://www.docker.com/). Follow the instructions in the links provided to download and install. On Windows you will need to install [Python](https://python.org) version >=3.10 or <=3.12. Please do not install 3.13 as this project was crated before strict typing checks of Python 3.13.   These first set of instructions are for Windows only. If you are using Linux, please skip to Linux section.
 
 ### Installation:
 
